@@ -30,8 +30,13 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-2">
-          <div className="flex items-center">
+        <a href="#home" className="flex items-center gap-3">
+          <img 
+            src="/src/assets/og-blinds-logo.png" 
+            alt="OG Blinds Logo" 
+            className="w-10 h-10 md:w-12 md:h-12 object-contain"
+          />
+          <div className="flex items-center gap-1">
             <span className={`text-2xl md:text-3xl font-display font-bold tracking-tight ${
               isScrolled ? "text-primary" : "text-primary-foreground"
             }`}>
