@@ -115,19 +115,6 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Quick Contact CTA */}
-            <div className="mt-8 pt-6 border-t border-border">
-              <p className="text-sm text-muted-foreground mb-4">
-                Need immediate assistance? Contact us via WhatsApp for quick response.
-              </p>
-              <button
-                onClick={handleWhatsAppSubmit}
-                className="w-full btn-cta rounded py-3 flex items-center justify-center gap-2"
-              >
-                <Send className="w-4 h-4" />
-                Submit via WhatsApp
-              </button>
-            </div>
           </div>
 
           {/* Social & Quick Links */}

@@ -1,5 +1,6 @@
 import { ChevronDown, Check } from "lucide-react";
 import heroBlinds from "@/assets/hero-blinds.jpg";
+import ogLogo from "@/assets/og-blinds-logo.png";
 
 const Hero = () => {
   const features = [
@@ -21,18 +22,23 @@ const Hero = () => {
           alt="Premium window blinds in modern living room"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 gradient-hero opacity-90" />
+        <div className="absolute inset-0 gradient-hero-lime opacity-90" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-32 text-center">
         {/* Logo */}
         <div className="mb-8 animate-fade-in">
+          <img
+            src={ogLogo}
+            alt="OG Blinds Logo"
+            className="w-48 md:w-64 lg:w-80 mx-auto mb-4"
+          />
           <h1 className="inline-block">
-            <span className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-primary-foreground tracking-tight">
+            <span className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-primary-foreground tracking-tight">
               OG
             </span>
-            <span className="text-5xl md:text-7xl lg:text-8xl font-display font-light text-primary-foreground tracking-tight">
+            <span className="text-4xl md:text-6xl lg:text-7xl font-display font-light text-primary-foreground tracking-tight ml-4">
               BLINDS
             </span>
           </h1>
