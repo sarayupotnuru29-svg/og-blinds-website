@@ -1,5 +1,5 @@
 import { Award, Shield, Wrench, Heart } from "lucide-react";
-import zebraBlinds from "@/assets/zebra-blinds.jpg";
+import about from "@/assets/newabout.jpg";
 
 const About = () => {
   const values = [
@@ -33,7 +33,7 @@ const About = () => {
           <div className="relative order-2 lg:order-1">
             <div className="relative overflow-hidden rounded shadow-xl">
               <img
-                src={zebraBlinds}
+                src={about}
                 alt="Premium zebra blinds in modern interior"
                 className="w-full h-[400px] lg:h-[500px] object-cover image-float"
               />
