@@ -17,7 +17,13 @@ const Services = () => {
       title: "Zebra Blinds",
       description: "Innovative dual-layer design with alternating sheer and opaque stripes. Adjust light levels precisely while maintaining your view.",
       image: zebraBlinds,
-      features: ["With or Without Cassette", "Modern aesthetic", "Versatile light control"],
+      features: ["Dual-layer design", "Modern aesthetic", "Versatile light control"],
+    },
+    {
+      title: "With or Without Cassette",
+      description: "Choose the perfect mounting style for your blinds. Cassette options provide a clean, enclosed look while open roll offers a minimalist appeal.",
+      image: customBlinds,
+      features: ["Enclosed cassette option", "Open roll available", "Clean installation"],
     },
     {
       title: "Motorised & Smart Blinds",
@@ -26,16 +32,16 @@ const Services = () => {
       features: ["Voice control compatible", "Scheduled automation", "Remote app control"],
     },
     {
+      title: "Control via Alexa, Siri, Google Home & App",
+      description: "Seamlessly integrate your blinds with your smart home ecosystem. Voice commands and app control for effortless operation.",
+      image: motorisedBlinds,
+      features: ["Alexa & Google Home", "Siri compatible", "Smartphone app control"],
+    },
+    {
       title: "Free Measure & Quote",
       description: "Our expert team provides complimentary on-site measurements and professional installation to ensure perfect fit every time.",
       image: installationImg,
       features: ["Professional Installation", "Expert consultation", "No obligation quote"],
-    },
-    {
-      title: "Custom Options",
-      description: "Tailored solutions designed specifically for your space. Choose from a wide range of fabrics, colors, and styles.",
-      image: customBlinds,
-      features: ["Bespoke designs", "Premium fabrics", "Perfect fit guarantee"],
     },
   ];
 
