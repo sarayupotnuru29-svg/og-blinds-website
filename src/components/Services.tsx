@@ -52,17 +52,19 @@
 //     "Expert Installation",
 //     "Custom Options",
 //     "Modern Aesthetic",
+//     "Custom Print Blinds",
 //   ];
 
 //   return (
-//     <section id="services" className="section-padding bg-muted py-16 md:py-24">
+//     <section id="services" className="section-padding bg-muted">
 //       <div className="container mx-auto px-4 md:px-6">
 //         {/* Section Header */}
 //         <div className="text-center mb-12">
 //           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
 //             Our Services
 //           </h2>
-//           <div className="divider-accent mb-6" />
+//           {/* UPDATED: Custom underline color to #2F3E46 */}
+//           <div className="h-1 w-24 mx-auto mb-6" style={{ backgroundColor: '#2F3E46' }} />
 //           <p className="text-secondary max-w-2xl mx-auto text-lg">
 //             Premium window solutions tailored to transform your space with style and functionality
 //           </p>
@@ -82,11 +84,11 @@
 //         </div>
 
 //         {/* Services Grid */}
-//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+//         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 //           {services.map((service, index) => (
 //             <div
 //               key={service.title}
-//               className="bg-card rounded overflow-hidden shadow-card card-hover group flex flex-col h-full transition-all duration-300"
+//               className="bg-card rounded overflow-hidden shadow-card card-hover group flex flex-col h-full"
 //               style={{ animationDelay: `${index * 0.1}s` }}
 //             >
 //               {/* Image Container */}
@@ -119,18 +121,19 @@
 //                 </ul>
 //               </div>
 
-//               {/* Decorative Bottom Bar */}
-//               <div className="h-1 bg-accent group-hover:bg-[#2F3E46] transition-colors duration-300" />
+//               {/* Divider Decor */}
+//               <div className="h-1 bg-accent group-hover:bg-cta transition-colors duration-300" />
 //             </div>
 //           ))}
 //         </div>
 
-//         {/* CTA Section */}
+//         {/* CTA */}
 //         <div className="text-center mt-16">
+//           {/* UPDATED: Redirect button background color to #2F3E46 */}
 //           <a 
 //             href="#get-started" 
-//             className="rounded-full px-10 py-4 text-lg font-bold inline-block text-white shadow-lg hover:shadow-xl transition-all hover:brightness-110 active:scale-95"
-//             style={{ backgroundColor: "#2F3E46" }}
+//             className="rounded-full px-10 py-4 text-lg font-bold inline-block shadow-lg hover:shadow-xl transition-all text-white"
+//             style={{ backgroundColor: '#2F3E46' }}
 //           >
 //             Get Started Today
 //           </a>
@@ -141,6 +144,7 @@
 // };
 
 // export default Services;
+
 
 import { Check } from "lucide-react";
 import rollerBlinds from "@/assets/Roller_Blinds.jpeg";
@@ -196,6 +200,7 @@ const Services = () => {
     "Expert Installation",
     "Custom Options",
     "Modern Aesthetic",
+    "Custom Print Blinds",
   ];
 
   return (
@@ -206,22 +211,23 @@ const Services = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
             Our Services
           </h2>
-          {/* UPDATED: Custom underline color to #2F3E46 */}
           <div className="h-1 w-24 mx-auto mb-6" style={{ backgroundColor: '#2F3E46' }} />
           <p className="text-secondary max-w-2xl mx-auto text-lg">
             Premium window solutions tailored to transform your space with style and functionality
           </p>
         </div>
 
-        {/* Highlights Bar */}
-        <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-4 lg:gap-8 mb-16 py-4 border-y border-foreground/5">
+        {/* Highlights Bar - UPDATED: Two rows (3 columns) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-4 max-w-4xl mx-auto mb-16 py-8 border-y border-foreground/5">
           {highlights.map((highlight) => (
             <div
               key={highlight}
-              className="flex items-center gap-2 text-foreground whitespace-nowrap"
+              className="flex items-center justify-center md:justify-start gap-3 text-foreground"
             >
-              <Check className="w-5 h-5 text-primary flex-shrink-0" />
-              <span className="font-semibold text-sm md:text-base">{highlight}</span>
+              <div className="bg-[#2F3E46]/10 p-1 rounded-full">
+                <Check className="w-4 h-4 text-[#2F3E46] flex-shrink-0" />
+              </div>
+              <span className="font-semibold text-sm md:text-base tracking-tight">{highlight}</span>
             </div>
           ))}
         </div>
@@ -234,7 +240,6 @@ const Services = () => {
               className="bg-card rounded overflow-hidden shadow-card card-hover group flex flex-col h-full"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Image Container */}
               <div className="relative h-48 overflow-hidden">
                 <img
                   src={service.image}
@@ -244,7 +249,6 @@ const Services = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
-              {/* Content */}
               <div className="p-6 flex-grow">
                 <h3 className="text-xl font-display font-semibold text-foreground mb-3">
                   {service.title}
@@ -253,18 +257,16 @@ const Services = () => {
                   {service.description}
                 </p>
                 
-                {/* Features */}
                 <ul className="space-y-2">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-2 text-sm text-foreground">
-                      <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                      <Check className="w-4 h-4 text-[#2F3E46] flex-shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Divider Decor */}
               <div className="h-1 bg-accent group-hover:bg-cta transition-colors duration-300" />
             </div>
           ))}
@@ -272,10 +274,9 @@ const Services = () => {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          {/* UPDATED: Redirect button background color to #2F3E46 */}
           <a 
             href="#get-started" 
-            className="rounded-full px-10 py-4 text-lg font-bold inline-block shadow-lg hover:shadow-xl transition-all text-white"
+            className="rounded-full px-10 py-4 text-lg font-bold inline-block shadow-lg hover:shadow-xl transition-all text-white active:scale-95"
             style={{ backgroundColor: '#2F3E46' }}
           >
             Get Started Today

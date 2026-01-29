@@ -62,7 +62,7 @@ const About = () => {
             </p>
             
             <p className="text-[#2F3E46]/70 leading-relaxed mb-8">
-              From elegant roller blinds to cutting-edge smart motorised solutions, we offer 
+              From elegant roller blinds to smart motorised solutions, we offer 
               custom-designed window treatments that perfectly complement your interior. Our 
               professional team handles everything from precise measurements to flawless 
               installation, ensuring your complete satisfaction.

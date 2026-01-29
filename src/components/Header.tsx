@@ -26,7 +26,10 @@
 //       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
 //         isScrolled ? "backdrop-blur-md shadow-lg py-2" : "bg-transparent py-4"
 //       }`}
-//       style={{ backgroundColor: isScrolled ? '#2F3E46' : 'transparent' }}
+//       style={{ 
+//         backgroundColor: isScrolled ? '#2F3E46' : 'transparent',
+//         ['--header-bg' as any]: '#2F3E46' 
+//       }}
 //     >
 //       <div className="container mx-auto px-4 flex items-center justify-between">
 //         {/* Logo and Brand */}
@@ -39,7 +42,8 @@
 //             />
 //           </div>
 //           <div className="flex items-center ml-2">
-//             <span className="text-xl md:text-2xl font-bold text-white">
+//             {/* UPDATED: "OG" now uses brand shade #84A59D */}
+//             <span className="text-xl md:text-2xl font-bold text-[#84A59D]">
 //               OG
 //             </span>
 //             <span className="text-xl md:text-2xl font-light ml-2 text-[#F4F7F6]">
@@ -54,7 +58,7 @@
 //             <a
 //               key={link.name}
 //               href={link.href}
-//               className="text-sm font-bold text-[#F4F7F6] hover:text-white/70 transition-colors"
+//               className="text-sm font-bold text-[#F4F7F6] hover:text-[#84A59D] transition-colors"
 //             >
 //               {link.name}
 //             </a>
@@ -65,16 +69,16 @@
 //         <div className="hidden md:flex items-center gap-6">
 //           <a
 //             href="tel:+61403956504"
-//             className="flex items-center gap-2 text-xs font-bold text-[#F4F7F6] hover:text-white"
+//             className="flex items-center gap-2 text-xs font-bold text-[#F4F7F6] hover:text-[#84A59D]"
 //           >
 //             <Phone className="w-3.5 h-3.5" />
 //             +61 403 956 504
 //           </a>
-//           {/* UPDATED: Synchronized Button Color to #2F3E46 */}
+          
 //           <a 
 //             href="#get-started" 
-//             className="rounded-md px-5 py-2 text-sm font-bold text-white transition-all border border-white/20 hover:bg-white/10"
-//             style={{ backgroundColor: '#2F3E46' }}
+//             className="rounded-md px-5 py-2 text-sm font-bold text-white transition-all border border-white/20 hover:bg-[#84A59D] hover:border-[#84A59D]"
+//             style={{ backgroundColor: 'var(--header-bg)' }}
 //           >
 //             Get Started
 //           </a>
@@ -91,18 +95,23 @@
 
 //       {/* Mobile Menu */}
 //       {isMobileMenuOpen && (
-//         <div style={{ backgroundColor: '#2F3E46' }} className="md:hidden border-t border-white/10">
+//         <div 
+//           className="md:hidden border-t border-white/10"
+//           style={{ backgroundColor: 'var(--header-bg)' }}
+//         >
 //           <nav className="px-4 py-6 flex flex-col gap-4">
 //             {navLinks.map((link) => (
-//               <a key={link.name} href={link.href} className="text-[#F4F7F6] font-bold py-2 border-b border-white/5">
+//               <a key={link.name} href={link.href} className="text-[#F4F7F6] font-bold py-2 border-b border-white/5 hover:text-[#84A59D]">
 //                 {link.name}
 //               </a>
 //             ))}
-//             {/* UPDATED: Mobile Button now matches Desktop and Theme color */}
 //             <a 
 //               href="#get-started" 
 //               className="text-white text-center py-3 rounded-lg font-bold shadow-inner"
-//               style={{ backgroundColor: '#2F3E46', border: '1px solid rgba(255,255,255,0.1)' }}
+//               style={{ 
+//                 backgroundColor: 'var(--header-bg)', 
+//                 border: '1px solid rgba(255,255,255,0.2)' 
+//               }}
 //             >
 //               Get Started
 //             </a>
@@ -145,14 +154,13 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "backdrop-blur-md shadow-lg py-2" : "bg-transparent py-4"
       }`}
-      // Use CSS Variables to force the color priority
       style={{ 
         backgroundColor: isScrolled ? '#2F3E46' : 'transparent',
         ['--header-bg' as any]: '#2F3E46' 
       }}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo and Brand */}
+        {/* Logo and Brand - Updated Font Styles */}
         <a href="#home" className="flex items-center gap-2 group">
           <div className="bg-white p-1 rounded-sm flex items-center justify-center">
             <img 
@@ -162,22 +170,23 @@ const Header = () => {
             />
           </div>
           <div className="flex items-center ml-2">
-            <span className="text-xl md:text-2xl font-bold text-white">
+            {/* Added font-display and tracking-tight to match Hero */}
+            <span className="text-xl md:text-2xl font-display font-bold text-[#84A59D] tracking-tight">
               OG
             </span>
-            <span className="text-xl md:text-2xl font-light ml-2 text-[#F4F7F6]">
+            <span className="text-xl md:text-2xl font-display font-medium ml-2 text-[#F4F7F6] tracking-tight">
               BLINDS
             </span>
           </div>
         </a>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation - Updated weights */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-bold text-[#F4F7F6] hover:text-white/70 transition-colors"
+              className="text-sm font-display font-semibold uppercase tracking-wider text-[#F4F7F6] hover:text-[#84A59D] transition-colors"
             >
               {link.name}
             </a>
@@ -188,16 +197,15 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-6">
           <a
             href="tel:+61403956504"
-            className="flex items-center gap-2 text-xs font-bold text-[#F4F7F6] hover:text-white"
+            className="flex items-center gap-2 text-xs font-display font-bold text-[#F4F7F6] hover:text-[#84A59D] tracking-wide"
           >
             <Phone className="w-3.5 h-3.5" />
             +61 403 956 504
           </a>
           
-          {/* UPDATED: Forced color via inline CSS Variable for high priority */}
           <a 
             href="#get-started" 
-            className="rounded-md px-5 py-2 text-sm font-bold text-white transition-all border border-white/20"
+            className="rounded-md px-5 py-2 text-sm font-display font-bold text-white transition-all border border-white/20 hover:bg-[#84A59D] hover:border-[#84A59D] uppercase tracking-tighter"
             style={{ backgroundColor: 'var(--header-bg)' }}
           >
             Get Started
@@ -221,13 +229,17 @@ const Header = () => {
         >
           <nav className="px-4 py-6 flex flex-col gap-4">
             {navLinks.map((link) => (
-              <a key={link.name} href={link.href} className="text-[#F4F7F6] font-bold py-2 border-b border-white/5">
+              <a 
+                key={link.name} 
+                href={link.href} 
+                className="text-[#F4F7F6] font-display font-bold py-2 border-b border-white/5 hover:text-[#84A59D] uppercase tracking-wide"
+              >
                 {link.name}
               </a>
             ))}
             <a 
               href="#get-started" 
-              className="text-white text-center py-3 rounded-lg font-bold shadow-inner"
+              className="text-white text-center py-3 rounded-lg font-display font-bold shadow-inner uppercase tracking-widest"
               style={{ 
                 backgroundColor: 'var(--header-bg)', 
                 border: '1px solid rgba(255,255,255,0.2)' 
