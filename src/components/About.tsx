@@ -61,7 +61,7 @@ const About = () => {
               treatments, we're committed to delivering exceptional quality and service.
             </p>
             
-            <p className="text-[#2F3E46]/70 leading-relaxed mb-8">
+            <p className="text-[#2F3E46]/80 text-lg leading-relaxed mb-6">
               From elegant roller blinds to smart motorised solutions, we offer 
               custom-designed window treatments that perfectly complement your interior. Our 
               professional team handles everything from precise measurements to flawless 

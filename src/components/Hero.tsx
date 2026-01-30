@@ -1,6 +1,6 @@
 import { ChevronDown, Check } from "lucide-react";
 import heroBlinds from "@/assets/home.jpg";
-import ogLogo from "@/assets/OG_logo.png";
+import ogLogo from "@/assets/replacelogo.jpeg";
 
 const Hero = () => {
   const features = [
@@ -42,20 +42,12 @@ const Hero = () => {
           <img
             src={ogLogo}
             alt="OG Blinds Logo"
-            className="w-32 md:w-40 lg:w-48 mx-auto mb-3 object-contain"
+            className="w-full h-[400px] lg:h-[600px] object-cover"
             onError={(e) => {
               (e.target as HTMLImageElement).style.display = "none";
             }}
           />
-          <h1 className="inline-block">
-            {/* UPDATED: "OG" now uses brand shade #84A59D */}
-            <span className="text-3xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-[#84A59D]">
-              OG
-            </span>
-            <span className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-[#F4F7F6] tracking-tight ml-3">
-              BLINDS
-            </span>
-          </h1>
+      
         </div>
 
         {/* Tagline */}
@@ -63,7 +55,7 @@ const Hero = () => {
           className="text-lg md:text-xl lg:text-2xl text-[#F4F7F6] font-display mb-4 animate-fade-in"
           style={{ animationDelay: "0.2s" }}
         >
-          Premium Blinds & Smart Window Solutions
+          
         </p>
 
         {/* Subtitle - Brightened text */}

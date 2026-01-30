@@ -145,8 +145,8 @@ const Header = () => {
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "Services", href: "#services" },
-    { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" },
+    { name: "About", href: "#about" },
   ];
 
   return (
