@@ -361,7 +361,7 @@
 
 import { ChevronDown, Check } from "lucide-react";
 import heroBlinds from "@/assets/home.jpg";
-import ogLogo from "@/assets/replacelogo.jpeg";
+import ogLogo from "@/assets/heronew.jpg";
 
 const Hero = () => {
   const features = [
@@ -395,8 +395,8 @@ const Hero = () => {
         />
       </div>
 
-      {/* Content Container */}
-      <div className="relative z-10 container mx-auto px-6 py-12 flex flex-col items-center mt-12 md:mt-16">
+      {/* Content Container - Adjusted mt to lift everything slightly */}
+      <div className="relative z-10 container mx-auto px-6 py-6 md:py-12 flex flex-col items-center mt-8 md:mt-12">
         
         {/* LOGO AREA */}
         <div className="w-full max-w-[280px] md:max-w-[500px] lg:max-w-[700px] mb-8 animate-fade-in">
@@ -412,16 +412,16 @@ const Hero = () => {
 
         {/* Subtitle */}
         <p
-          className="text-sm md:text-lg text-[#F4F7F6] max-w-lg md:max-w-2xl mx-auto mb-10 animate-fade-in font-medium leading-relaxed text-center px-4"
+          className="text-sm md:text-lg text-[#F4F7F6] max-w-lg md:max-w-2xl mx-auto mb-8 animate-fade-in font-medium leading-relaxed text-center px-4"
           style={{ animationDelay: "0.4s" }}
         >
           Transform your home with stylish, smart blinds controlled via Alexa,
           Siri, Google Home & Phone App
         </p>
 
-        {/* Feature List */}
+        {/* Feature List - Reduced margin bottom from 10 to 6 to lift buttons */}
         <div
-          className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-4 md:gap-6 mb-12 animate-fade-in"
+          className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-4 md:gap-6 mb-6 animate-fade-in"
           style={{ animationDelay: "0.6s" }}
         >
           {features.map((feature) => (
@@ -437,7 +437,7 @@ const Hero = () => {
           ))}
         </div>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons - Lifted up by reducing margin above them */}
         <div
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto animate-fade-in"
           style={{ animationDelay: "0.8s" }}
@@ -459,8 +459,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator - Pushed down from bottom-4 to bottom-1 */}
-      <div className="absolute bottom-1 w-full flex justify-center animate-bounce z-20">
+      {/* Scroll Indicator - Bottom-0 with pb-2 for max separation */}
+      <div className="absolute bottom-0 w-full flex justify-center animate-bounce z-20 pb-2">
         <a
           href="#services"
           className="flex flex-col items-center text-[#F4F7F6]/60 hover:text-white transition-colors"
