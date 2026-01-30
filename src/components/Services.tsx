@@ -63,22 +63,23 @@
 //           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
 //             Our Services
 //           </h2>
-//           {/* UPDATED: Custom underline color to #2F3E46 */}
 //           <div className="h-1 w-24 mx-auto mb-6" style={{ backgroundColor: '#2F3E46' }} />
 //           <p className="text-secondary max-w-2xl mx-auto text-lg">
 //             Premium window solutions tailored to transform your space with style and functionality
 //           </p>
 //         </div>
 
-//         {/* Highlights Bar */}
-//         <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-4 lg:gap-8 mb-16 py-4 border-y border-foreground/5">
+//         {/* Highlights Bar - UPDATED: Two rows (3 columns) */}
+//         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-4 max-w-4xl mx-auto mb-16 py-8 border-y border-foreground/5">
 //           {highlights.map((highlight) => (
 //             <div
 //               key={highlight}
-//               className="flex items-center gap-2 text-foreground whitespace-nowrap"
+//               className="flex items-center justify-center md:justify-start gap-3 text-foreground"
 //             >
-//               <Check className="w-5 h-5 text-primary flex-shrink-0" />
-//               <span className="font-semibold text-sm md:text-base">{highlight}</span>
+//               <div className="bg-[#2F3E46]/10 p-1 rounded-full">
+//                 <Check className="w-4 h-4 text-[#2F3E46] flex-shrink-0" />
+//               </div>
+//               <span className="font-semibold text-sm md:text-base tracking-tight">{highlight}</span>
 //             </div>
 //           ))}
 //         </div>
@@ -91,7 +92,6 @@
 //               className="bg-card rounded overflow-hidden shadow-card card-hover group flex flex-col h-full"
 //               style={{ animationDelay: `${index * 0.1}s` }}
 //             >
-//               {/* Image Container */}
 //               <div className="relative h-48 overflow-hidden">
 //                 <img
 //                   src={service.image}
@@ -101,7 +101,6 @@
 //                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 //               </div>
 
-//               {/* Content */}
 //               <div className="p-6 flex-grow">
 //                 <h3 className="text-xl font-display font-semibold text-foreground mb-3">
 //                   {service.title}
@@ -110,18 +109,16 @@
 //                   {service.description}
 //                 </p>
                 
-//                 {/* Features */}
 //                 <ul className="space-y-2">
 //                   {service.features.map((feature) => (
 //                     <li key={feature} className="flex items-center gap-2 text-sm text-foreground">
-//                       <Check className="w-4 h-4 text-primary flex-shrink-0" />
+//                       <Check className="w-4 h-4 text-[#2F3E46] flex-shrink-0" />
 //                       <span>{feature}</span>
 //                     </li>
 //                   ))}
 //                 </ul>
 //               </div>
 
-//               {/* Divider Decor */}
 //               <div className="h-1 bg-accent group-hover:bg-cta transition-colors duration-300" />
 //             </div>
 //           ))}
@@ -129,10 +126,9 @@
 
 //         {/* CTA */}
 //         <div className="text-center mt-16">
-//           {/* UPDATED: Redirect button background color to #2F3E46 */}
 //           <a 
 //             href="#get-started" 
-//             className="rounded-full px-10 py-4 text-lg font-bold inline-block shadow-lg hover:shadow-xl transition-all text-white"
+//             className="rounded-full px-10 py-4 text-lg font-bold inline-block shadow-lg hover:shadow-xl transition-all text-white active:scale-95"
 //             style={{ backgroundColor: '#2F3E46' }}
 //           >
 //             Get Started Today
@@ -212,54 +208,54 @@ const Services = () => {
             Our Services
           </h2>
           <div className="h-1 w-24 mx-auto mb-6" style={{ backgroundColor: '#2F3E46' }} />
-          <p className="text-secondary max-w-2xl mx-auto text-lg">
+          <p className="text-secondary max-w-2xl mx-auto text-lg px-4">
             Premium window solutions tailored to transform your space with style and functionality
           </p>
         </div>
 
-        {/* Highlights Bar - UPDATED: Two rows (3 columns) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-4 max-w-4xl mx-auto mb-16 py-8 border-y border-foreground/5">
+        {/* Highlights Bar - UPDATED for perfect mobile alignment */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-8 max-w-4xl mx-auto mb-16 py-8 border-y border-foreground/5">
           {highlights.map((highlight) => (
             <div
               key={highlight}
-              className="flex items-center justify-center md:justify-start gap-3 text-foreground"
+              className="flex items-center justify-start sm:justify-center md:justify-start gap-3 text-foreground px-8 sm:px-0"
             >
-              <div className="bg-[#2F3E46]/10 p-1 rounded-full">
-                <Check className="w-4 h-4 text-[#2F3E46] flex-shrink-0" />
+              <div className="bg-[#2F3E46]/10 p-1 rounded-full flex-shrink-0">
+                <Check className="w-4 h-4 text-[#2F3E46]" />
               </div>
-              <span className="font-semibold text-sm md:text-base tracking-tight">{highlight}</span>
+              <span className="font-semibold text-base tracking-tight whitespace-nowrap">{highlight}</span>
             </div>
           ))}
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Services Grid - Fixed alignment for mobile and desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="bg-card rounded overflow-hidden shadow-card card-hover group flex flex-col h-full"
+              className="bg-card rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group flex flex-col h-full border border-border/50"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-56 overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
               </div>
 
-              <div className="p-6 flex-grow">
-                <h3 className="text-xl font-display font-semibold text-foreground mb-3">
+              <div className="p-6 flex-grow flex flex-col">
+                <h3 className="text-xl font-display font-bold text-foreground mb-3">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed line-clamp-3">
+                <p className="text-muted-foreground mb-6 text-sm leading-relaxed flex-grow">
                   {service.description}
                 </p>
                 
-                <ul className="space-y-2">
+                <ul className="space-y-3 mt-auto">
                   {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-sm text-foreground">
+                    <li key={feature} className="flex items-center gap-2 text-sm font-medium text-foreground/80">
                       <Check className="w-4 h-4 text-[#2F3E46] flex-shrink-0" />
                       <span>{feature}</span>
                     </li>
@@ -267,7 +263,7 @@ const Services = () => {
                 </ul>
               </div>
 
-              <div className="h-1 bg-accent group-hover:bg-cta transition-colors duration-300" />
+              <div className="h-1.5 bg-[#2F3E46]/10 group-hover:bg-[#2F3E46] transition-colors duration-300" />
             </div>
           ))}
         </div>
@@ -276,7 +272,7 @@ const Services = () => {
         <div className="text-center mt-16">
           <a 
             href="#get-started" 
-            className="rounded-full px-10 py-4 text-lg font-bold inline-block shadow-lg hover:shadow-xl transition-all text-white active:scale-95"
+            className="rounded-full px-12 py-4 text-lg font-bold inline-block shadow-lg hover:shadow-2xl transition-all text-white active:scale-95 hover:-translate-y-1"
             style={{ backgroundColor: '#2F3E46' }}
           >
             Get Started Today
