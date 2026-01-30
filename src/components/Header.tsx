@@ -128,7 +128,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
-import logoImg from "../assets/OG_logo.png"; 
+import logoImg from "../assets/favicon.ico"; 
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
