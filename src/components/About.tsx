@@ -65,7 +65,7 @@ const About = () => {
               From elegant roller blinds to smart motorised solutions, we offer 
               custom-designed window treatments that perfectly complement your interior. Our 
               professional team handles everything from precise measurements to flawless 
-              installation, ensuring your complete satisfaction.
+              installation, ensuring you complete satisfaction.
             </p>
 
             {/* Values Grid */}

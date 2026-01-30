@@ -138,7 +138,7 @@ const Contact = () => {
 
                 </div>
 
-                <span className="font-medium text-[#2F3E46] text-sm">Services across all Malbourne</span>
+                <span className="font-medium text-[#2F3E46] text-sm">Services across all Melbourne</span>
 
               </div>
 
